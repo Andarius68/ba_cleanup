@@ -4,6 +4,8 @@ Cleans up unknown nodes for Beul-aithris Minetest Server.
 
 Just walk around and it should swap out unknown nodes for known ones.
 
+Also adds toolrank support for tools from mods which don't already support toolranks.
+
 ## Credit
 
 You are free to:
