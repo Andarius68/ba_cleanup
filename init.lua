@@ -20,3 +20,18 @@ toolranks.add_tool("nether:lightstaff_eternal")
 toolranks.add_tool("rainbow_ore:rainbow_ore_pickaxe")
 toolranks.add_tool("rainbow_ore:rainbow_ore_axe")
 toolranks.add_tool("rainbow_ore:rainbow_ore_shovel")
+
+-- Announce XP level-ups to all.
+
+xp_redo.register_hook({
+    rank_change = function(playername, xp, rank)
+
+    if not playername or not rank or not rank.name or not xp then
+        return
+    end
+
+    local msg = playername.." leveled up to "..rank.name.." with "..xp_redo.format_thousand(xp).."xp!"
+    minetest.chat_send_all(msg)
+    
+    end
+})
